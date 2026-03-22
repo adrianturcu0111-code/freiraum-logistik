@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | FreiRaum Logistik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html"><img src="Logo Freiraum.jpeg" alt="Logo" class="h-12"></a>
+            <div class="flex items-center space-x-4 font-semibold">
+                <a href="index.html" class="text-blue-900 hover:text-blue-600" data-key="nav-home">Home</a>
+                <button onclick="setLanguage('de')" class="hover:text-blue-600">DE</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="setLanguage('en')" class="hover:text-blue-600">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 max-w-4xl bg-white shadow-sm my-10 rounded-lg">
+        <h1 class="text-3xl font-bold text-blue-900 mb-8 border-b pb-4" data-key="title">Datenschutzerklärung / Privacy Policy</h1>
+        
+        <section class="space-y-8">
+            <div>
+                <h2 class="text-xl font-bold mb-3" data-key="h1">1. Datenschutz auf einen Blick</h2>
+                <p class="leading-relaxed" data-key="p1">
+                    Wir freuen uns über Ihren Besuch auf unserer Webseite. Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Im Folgenden informieren wir Sie darüber, welche Daten wir während Ihres Besuchs auf unserer Webseite erfassen und wie diese genutzt werden.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold mb-3" data-key="h2">2. Datenerfassung pe unserer Webseite</h2>
+                <p class="leading-relaxed" data-key="p2">
+                    Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch beim Besuch der Webseite durch unsere IT-Systeme erfasst (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold mb-3" data-key="h3">3. Kontakt und WhatsApp</h2>
+                <p class="leading-relaxed" data-key="p3">
+                    Wenn Sie uns per Kontaktformular sau WhatsApp Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl font-bold mb-3" data-key="h4">4. Ihre Rechte</h2>
+                <p class="leading-relaxed" data-key="p4">
+                    Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-6 text-center">
+        <p>&copy; 2026 FreiRaum Logistik GmbH</p>
+    </footer>
+
+    <script>
+        const translations = {
+            'de': {
+                'nav-home': 'Zurück zur Startseite',
+                'title': 'Datenschutzerklärung',
+                'h1': '1. Datenschutz auf einen Blick',
+                'p1': 'Wir freuen uns über Ihren Besuch auf unserer Webseite. Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen.',
+                'h2': '2. Datenerfassung',
+                'p2': 'Ihre Daten werden erhoben, wenn Sie uns diese mitteilen (z.B. Kontaktformular) oder automatisch durch IT-Systeme.',
+                'h3': '3. Kontakt und WhatsApp',
+                'p3': 'Anfragen via WhatsApp oder Formular werden zur Bearbeitung Ihrer Anfrage sicher gespeichert.',
+                'h4': '4. Ihre Rechte',
+                'p4': 'Sie haben das Recht auf Auskunft, Berichtigung oder Löschung Ihrer Daten jederzeit.'
+            },
+            'en': {
+                'nav-home': 'Back to Home',
+                'title': 'Privacy Policy',
+                'h1': '1. Data Protection at a Glance',
+                'p1': 'We are pleased about your visit to our website. The protection of your personal data is an important concern for us.',
+                'h2': '2. Data Collection',
+                'p2': 'Your data is collected when you provide it to us (e.g., contact form) or automatically by IT systems.',
+                'h3': '3. Contact and WhatsApp',
+                'p3': 'Inquiries via WhatsApp or forms are stored securely to process your request.',
+                'h4': '4. Your Rights',
+                'p4': 'You have the right to information, correction, or deletion of your data at any time.'
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                elem.innerText = translations[lang][elem.getAttribute('data-key')];
+            });
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
