@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport | FreiRaum Logistik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <img src="Logo Freiraum.jpeg" alt="Logo" class="h-16">
+            <div class="hidden md:flex space-x-8 font-semibold">
+                <a href="index.html" class="text-blue-900 hover:text-blue-600" data-key="nav-home">Home</a>
+                <a href="transport.html" class="text-blue-600 border-b-2 border-blue-600" data-key="nav-transport">Transport</a>
+                <a href="offerte.html" class="text-blue-900 hover:text-blue-600" data-key="nav-quote">Offerte</a>
+                <a href="contact.html" class="text-blue-900 hover:text-blue-600" data-key="nav-contact">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button onclick="setLanguage('de')" class="font-bold">DE</button>
+                <span class="text-gray-300">|</span>
+                <button onclick="setLanguage('en')" class="font-bold">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold" data-key="title">Unsere Transportdienstleistungen</h1>
+        </div>
+    </section>
+
+    <section class="py-16 container mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+            <img src="imagine camiona iveco hala industriala.jpg" class="rounded-lg shadow-lg">
+            <div>
+                <h2 class="text-2xl font-bold text-blue-900 mb-4" data-key="sec1-title">Straßentransport</h2>
+                <p class="text-gray-700" data-key="sec1-text">Wir bieten zuverlässige Straßentransportlösungen in ganz Europa. Unsere Iveco-Flotte ist für jede Herausforderung bereit.</p>
+            </div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 bg-white shadow rounded-lg border-t-4 border-blue-600">
+                <i class="fas fa-truck-loading text-4xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold mb-2" data-key="card1-t">Komplettladungen (FTL)</h3>
+                <p class="text-sm text-gray-600" data-key="card1-d">Effizienter Transport für große Volumina direkt zum Ziel.</p>
+            </div>
+            <div class="p-6 bg-white shadow rounded-lg border-t-4 border-blue-600">
+                <i class="fas fa-boxes text-4xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold mb-2" data-key="card2-t">Teilladungen (LTL)</h3>
+                <p class="text-sm text-gray-600" data-key="card2-d">Kostengünstige Lösungen pentru grupaje și mărfuri parțiale.</p>
+            </div>
+            <div class="p-6 bg-white shadow rounded-lg border-t-4 border-blue-600">
+                <i class="fas fa-clock text-4xl text-blue-600 mb-4"></i>
+                <h3 class="font-bold mb-2" data-key="card3-t">Express-Versand</h3>
+                <p class="text-sm text-gray-600" data-key="card3-d">Wenn es schnell gehen muss – sicher und pünktlich.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-6 text-center">
+        <p>&copy; 2026 FreiRaum Logistik GmbH</p>
+    </footer>
+
+    <script>
+        const translations = {
+            'de': {
+                'nav-home': 'Startseite', 'nav-transport': 'Transport', 'nav-quote': 'Offerte', 'nav-contact': 'Kontakt',
+                'title': 'Unsere Transportdienstleistungen',
+                'sec1-title': 'Straßentransport',
+                'sec1-text': 'Wir bieten zuverlässige Straßentransportlösungen in ganz Europa. Unsere Iveco-Flotte ist für jede Herausforderung bereit.',
+                'card1-t': 'Komplettladungen (FTL)', 'card1-d': 'Effizienter Transport für große Volumina.',
+                'card2-t': 'Teilladungen (LTL)', 'card2-d': 'Kostengünstige Lösungen für Teilfracht.',
+                'card3-t': 'Express-Versand', 'card3-d': 'Zeitkritische Sendungen sicher geliefert.'
+            },
+            'en': {
+                'nav-home': 'Home', 'nav-transport': 'Transport', 'nav-quote': 'Request Quote', 'nav-contact': 'Contact',
+                'title': 'Our Transport Services',
+                'sec1-title': 'Road Transport',
+                'sec1-text': 'We offer reliable road transport solutions across Europe. Our Iveco fleet is ready for any challenge.',
+                'card1-t': 'Full Truck Load (FTL)', 'card1-d': 'Efficient transport for large volumes.',
+                'card2-t': 'Less than Truckload (LTL)', 'card2-d': 'Cost-effective solutions for partial freight.',
+                'card3-t': 'Express Shipping', 'card3-d': 'Time-critical shipments delivered safely.'
+            }
+        };
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                elem.innerText = translations[lang][elem.getAttribute('data-key')];
+            });
+        }
+    </script>
+</body>
+</html>
