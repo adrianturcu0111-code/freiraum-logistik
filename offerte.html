@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerte | FreiRaum Logistik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+        <a href="index.html"><img src="Logo Freiraum.jpeg" class="h-12"></a>
+        <div class="flex items-center space-x-4">
+            <a href="index.html" class="text-blue-900 font-bold">Home</a>
+            <button onclick="setLanguage('de')" class="text-sm font-bold">DE</button>
+            <button onclick="setLanguage('en')" class="text-sm font-bold">EN</button>
+        </div>
+    </nav>
+
+    <div class="max-w-4xl mx-auto py-12 px-6">
+        <h1 class="text-3xl font-bold text-blue-900 mb-8 text-center" data-key="title">Angebot anfordern</h1>
+        
+        <form action="https://formsubmit.co/ADRESA_TA_DE_EMAIL@gmail.com" method="POST" class="bg-white p-8 shadow-xl rounded-lg border-t-4 border-blue-600">
+            
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Neue Transportanfrage - FreiRaum Logistik">
+            <input type="hidden" name="_next" value="https://UTILIZATOR.github.io/REPO/index.html">
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block text-sm font-bold mb-2" data-key="label-name">Name / Firma</label>
+                    <input type="text" name="name" required class="w-full border p-3 rounded focus:ring-2 focus:ring-blue-600 outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2">E-Mail</label>
+                    <input type="email" name="email" required class="w-full border p-3 rounded focus:ring-2 focus:ring-blue-600 outline-none">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6 border-b pb-6">
+                <div>
+                    <label class="block text-sm font-bold mb-2" data-key="label-from">Abholort (PLZ, Stadt, Land)</label>
+                    <input type="text" name="pickup" required class="w-full border p-3 rounded bg-gray-50">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2" data-key="label-to">Lieferort (PLZ, Stadt, Land)</label>
+                    <input type="text" name="delivery" required class="w-full border p-3 rounded bg-gray-50">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block text-sm font-bold mb-2" data-key="label-weight">Gewicht / Ladungstyp</label>
+                    <input type="text" name="cargo" placeholder="ex: 20t, Paletten..." class="w-full border p-3 rounded">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold mb-2" data-key="label-date">Datum</label>
+                    <input type="date" name="date" class="w-full border p-3 rounded">
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-bold mb-2" data-key="label-msg">Zusätzliche Details</label>
+                <textarea name="message" rows="4" class="w-full border p-3 rounded"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded hover:bg-blue-800 transition shadow-lg" data-key="btn">Anfrage senden</button>
+        </form>
+    </div>
+
+    <script>
+        const translations = {
+            'de': {
+                'title': 'Unverbindliches Angebot anfordern',
+                'label-name': 'Name / Firma',
+                'label-from': 'Abholort (PLZ, Stadt, Land)',
+                'label-to': 'Lieferort (PLZ, Stadt, Land)',
+                'label-weight': 'Gewicht / Ladungstyp',
+                'label-date': 'Gewünschtes Datum',
+                'label-msg': 'Zusätzliche Details / Nachricht',
+                'btn': 'Angebot jetzt anfordern'
+            },
+            'en': {
+                'title': 'Request a Free Quote',
+                'label-name': 'Name / Company',
+                'label-from': 'Pickup Location (ZIP, City, Country)',
+                'label-to': 'Delivery Location (ZIP, City, Country)',
+                'label-weight': 'Weight / Cargo Type',
+                'label-date': 'Preferred Date',
+                'label-msg': 'Additional Details / Message',
+                'btn': 'Request Quote Now'
+            }
+        };
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                elem.innerText = translations[lang][elem.getAttribute('data-key')];
+            });
+        }
+    </script>
+</body>
+</html>
