@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreiRaum Logistik GmbH</title>
@@ -17,26 +18,40 @@
 </head>
 <body class="bg-gray-50 font-sans">
 
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <img src="Logo_Freiraum.jpg" alt="Fast.Reliable.FreiRaum" class="h-16">
-            
-            <div class="hidden md:flex space-x-8 font-semibold">
-                <a href="index.html" class="text-blue-900 hover:text-blue-600 active-link" data-key="nav-home">Home</a>
-                <a href="transport.html" class="text-blue-900 hover:text-blue-600" data-key="nav-transport">Transport</a>
-                <a href="offerte.html" class="text-blue-900 hover:text-blue-600" data-key="nav-quote">Offerte</a>
-                <a href="contact.html" class="text-blue-900 hover:text-blue-600" data-key="nav-contact">Contact</a>
-            </div>
-
-            <div class="flex items-center space-x-4">
-                <button onclick="setLanguage('de')" class="hover:opacity-70 font-bold text-sm">DE</button>
-                <span class="text-gray-300">|</span>
-                <button onclick="setLanguage('en')" class="hover:opacity-70 font-bold text-sm">EN</button>
-            </div>
+      <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html">
+            <img src="Logo Freiraum.jpeg" alt="Logo" class="h-10 md:h-16">
+        </a>
+        
+        <div class="hidden md:flex space-x-6 font-semibold text-blue-900 uppercase text-sm">
+            <a href="index.html" class="hover:text-blue-600" data-key="nav-home">Home</a>
+            <a href="transport.html" class="hover:text-blue-600" data-key="nav-transport">Transport</a>
+            <a href="offerte.html" class="hover:text-blue-600" data-key="nav-quote">Offerte</a>
+            <a href="contact.html" class="hover:text-blue-600" data-key="nav-contact">Contact</a>
         </div>
-    </nav>
 
-    <header class="hero-bg h-[600px] flex items-center justify-center text-center text-white px-4">
+        <div class="flex items-center space-x-3">
+            <div class="text-xs font-bold border rounded px-2 py-1 flex space-x-2 bg-gray-100">
+                <button onclick="setLanguage('de')" class="hover:text-blue-600">DE</button>
+                <span class="text-gray-400">|</span>
+                <button onclick="setLanguage('en')" class="hover:text-blue-600">EN</button>
+            </div>
+            
+            <button onclick="toggleMobileMenu()" class="md:hidden text-blue-900 p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden bg-blue-900 text-white flex flex-col p-4 space-y-4 md:hidden">
+        <a href="index.html" class="border-b border-blue-800 pb-2" data-key="nav-home">Home</a>
+        <a href="transport.html" class="border-b border-blue-800 pb-2" data-key="nav-transport">Transport</a>
+        <a href="offerte.html" class="border-b border-blue-800 pb-2" data-key="nav-quote">Offerte</a>
+        <a href="contact.html" class="pb-2" data-key="nav-contact">Contact</a>
+    </div>
+</nav>
+        <header class="hero-bg h-[600px] flex items-center justify-center text-center text-white px-4">
         <div>
             <h1 class="text-5xl md:text-6xl font-bold mb-4" data-key="hero-title">FreiRaum Logistik GmbH</h1>
             <p class="text-xl md:text-2xl mb-8" data-key="hero-subtitle">Ihr zuverlässiger Partner für Transport und Spedition</p>
@@ -116,5 +131,14 @@
             document.documentElement.lang = lang;
         }
     </script>
+    <script>
+    // Funcția care deschide/închide meniul pe mobil
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
+
+    // Aici rămâne restul codului tău pentru limbi (setLanguage)...
+</script>
 </body>
 </html>
